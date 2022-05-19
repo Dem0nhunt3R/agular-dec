@@ -1,0 +1,7 @@
+.comments-box{
+  display: flex;
+  background-color: antiquewhite;
+}
+.comments-box>div{
+  width: 50%;
+}

@@ -1,0 +1,7 @@
+.box{
+  background-color: aquamarine;
+  display: flex;
+}
+.box>div{
+  width: 50%;
+}
