@@ -2,14 +2,15 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
-import {Route, RouterModule} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {
   CommentComponent,
   CommentDetailsComponent,
   CommentsComponent,
   HeaderComponent,
   HomeComponent,
-  MainLayoutComponent, NotFoundComponent,
+  MainLayoutComponent,
+  NotFoundComponent,
   PostComponent,
   PostDetailsComponent,
   PostsComponent,
@@ -19,7 +20,7 @@ import {
 } from "./components";
 import {HttpClientModule} from "@angular/common/http";
 
-const routes: Route[] = [
+const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},

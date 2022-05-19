@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IUserDetails} from "../../models";
 import {ActivatedRoute, Router} from "@angular/router";
-import {UserService} from "../../services/user.service";
+import {UserService} from "../../services";
 
 @Component({
   selector: 'app-user-details',
@@ -16,13 +16,18 @@ export class UserDetailsComponent implements OnInit {
 
   }
 
+
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(value => {
-      let element: IUserDetails = this.router.getCurrentNavigation()?.extras.state?.['data'];
-      if (!element) {
-        this.userService.getUser(value['id']).subscribe(value1 => this.userDetails = value1 as IUserDetails);
+    this.activatedRoute.params.subscribe(({id} )=> {
+      console.log(id);
+      let element = this.router.getCurrentNavigation()?.extras.state?.['data'] as IUserDetails;
+      console.log(element)
+      if (!id) {
+        console.log('element is empty')
+        this.userService.getUser(id)
+          .subscribe(value1 => this.userDetails = value1 as IUserDetails);
       } else {
-        this.userDetails = element as IUserDetails;
+        this.userDetails = element;
       }
     })
   }
