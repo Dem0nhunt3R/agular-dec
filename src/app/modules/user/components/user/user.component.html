@@ -1,0 +1,6 @@
+<div *ngIf="user">
+  <p>
+    {{user.id}}. {{user.name}}
+    <button (click)="getDetails(user.id)">details</button>
+  </p>
+</div>

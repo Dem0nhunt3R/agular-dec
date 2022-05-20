@@ -1,0 +1,6 @@
+<div *ngIf="post">
+  <p>
+    {{post.id}}. {{post.title}}
+    <button (click)="getDetails(post.id)">details</button>
+  </p>
+</div>
