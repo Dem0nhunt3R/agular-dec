@@ -1,0 +1,7 @@
+.todos-box {
+  display: flex;
+}
+
+.todos-box > div {
+  width: 50%;
+}

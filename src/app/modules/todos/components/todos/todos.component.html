@@ -1,0 +1,8 @@
+<div class="todos-box">
+  <div>
+    <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

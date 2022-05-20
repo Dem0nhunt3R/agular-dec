@@ -1,0 +1,8 @@
+<div>
+  <p>
+    {{user.id}}. {{user.name}}
+  </p>
+  <a routerLink="{{user.id}}" [state]="user">details</a>
+  <br>
+  <button (click)="getTodos(user.id)">todos</button>
+</div>
