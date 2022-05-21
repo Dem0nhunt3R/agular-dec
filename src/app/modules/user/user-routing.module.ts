@@ -5,19 +5,23 @@ import {UserDetailsComponent} from "./components/user-details/user-details.compo
 import {UsersComponent} from "./components/users/users.component";
 import {UsersResolver} from "./services/resolvers/users.resolver";
 import {UserTodosComponent} from "./components/user-todos/user-todos.component";
+import {UserGuard} from "./services/guards/user.guard";
 
 const routes: Routes = [
   {
     path: '',
     component: UsersComponent,
     resolve: {usersData: UsersResolver},
+    canActivate: [UserGuard],
+    canDeactivate: [UserGuard],
+    canActivateChild: [UserGuard],
     children: [
       {
         path: ':id',
         component: UserDetailsComponent,
         resolve: {userData: UserResolver}
       },
-      {path: ':id/todos', component: UserTodosComponent, pathMatch:'full'}
+      {path: ':id/todos', component: UserTodosComponent, pathMatch: 'full'}
     ]
   }
 ];
